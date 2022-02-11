@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Call API
         shell: bash
-        if: github.event.schedule == '0 9 * * *' ||
+        if: github.event.schedule == '0 9 * * *'
         env:
           GH_CRON_API_KEY: '${{ secrets.GH_CRON_API_KEY }}'
         run: |
