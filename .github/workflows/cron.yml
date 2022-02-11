@@ -6,7 +6,7 @@ on:
     - cron: '0 9 * * *'
   workflow_dispatch:
 env:
-  GH_CRON_API_KEY: '${{ secrets.GH_CRON_API_KEY }}'
+  GH_CRON_API_KEY: ${{ secrets.GH_CRON_API_KEY }}
   EVENT_NAME: '${{ github.event.name }}'
 jobs:
   cron-closeDayOrders:
