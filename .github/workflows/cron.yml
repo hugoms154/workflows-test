@@ -24,4 +24,4 @@ jobs:
           --data-raw '{"query":"mutation {\n    CloseDayOrders\n}","variables":{}}'
       - name: show
         run: |
-          echo teste: $EVENT_NAME
+          echo 'teste: $EVENT_NAME'
