@@ -23,7 +23,7 @@ jobs:
           --data-raw '{"query":"mutation {\n    CloseDayOrders\n}","variables":{}}'
       - name: show
         run: |
-          echo teste: ${{ GH_CRON_API_KEY }}
+          echo teste: $GH_CRON_API_KEY
       - name: show 2
         run: |
           echo 'teste: ${{ secrets.GH_CRON_API_KEY }}'
