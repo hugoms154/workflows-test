@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Call API
         shell: bash
-        if: github.event.schedule == '0 9 * * *'
+        # if: github.event.schedule == '0 9 * * *'
         run: |
           curl --location --request POST 'https://truegifter.com/api/graphql' \
           --header 'GH_CRON_API_KEY: $GH_CRON_API_KEY' \
