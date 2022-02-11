@@ -18,11 +18,11 @@ env:
   GH_CRON_API_KEY: ${{ secrets.GH_CRON_API_KEY }}
 jobs:
   cron-closeDayOrders:
+    if: github.event.schedule == '0 9 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'cron-closeDayOrders')
     runs-on: ubuntu-latest
     steps:
       - name: Call API
         shell: bash
-        if: github.event.schedule == '0 9 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'cron-closeDayOrders')
         run: |
           curl --location --request POST 'http://179.158.238.68:3000/api/graphql' \
           --header 'GH_CRON_API_KEY: ${{ env.GH_CRON_API_KEY }}' \
@@ -37,10 +37,10 @@ jobs:
           echo 'teste: ${{ toJSON(github) }}'
           
   cron-fake:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'cron-fake'
     runs-on: ubuntu-latest
     steps:
       - name: show
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'cron-fake'
         run: |
           echo teste: $GH_CRON_API_KEY
 
