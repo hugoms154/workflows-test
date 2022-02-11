@@ -5,6 +5,15 @@ on:
   schedule:
     - cron: '0 9 * * *'
   workflow_dispatch:
+    inputs:
+      job:
+        description: 'Job to run'     
+        required: true
+        default: 'cron-closeDayOrders' 
+        type: choice
+        options:
+        - cron-closeDayOrders
+        - cron-fake
 env:
   GH_CRON_API_KEY: ${{ secrets.GH_CRON_API_KEY }}
 jobs:
@@ -26,4 +35,11 @@ jobs:
       - name: show 2
         run: |
           echo 'teste: ${{ toJSON(github) }}'
+          
+  cron-fake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show
+        run: |
+          echo teste: $GH_CRON_API_KEY
 
