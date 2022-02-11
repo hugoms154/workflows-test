@@ -25,5 +25,5 @@ jobs:
           echo teste: $GH_CRON_API_KEY
       - name: show 2
         run: |
-          echo 'teste: ${{ github.event.workflow_dispatch }}'
+          echo 'teste: ${{ github.event }}'
 
