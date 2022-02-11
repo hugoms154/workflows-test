@@ -22,4 +22,4 @@ jobs:
           --header 'Content-Type: application/json' \
           --data-raw '{"query":"mutation {\n    CloseDayOrders\n}","variables":{}}'
       - name: show
-        run: echo ${{ github.event.name }}
+        run: echo 'teste: ${{ github.event.name }}'
