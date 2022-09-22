@@ -1,0 +1,15 @@
+name: merge-sql-files
+on: push
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create report file
+        run: cd sql && rm teste.sql || true && for f in *.sql; do cat $f; echo; echo; done > teste.sql
+      - name: Commit report
+        run: |
+          git config --global user.name 'hugo miranda'
+          git config --global user.email 'hugo.miranda.souza@gmail.com'
+          git commit -am "merge-sql-files-action"
+          git push

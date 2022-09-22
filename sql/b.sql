@@ -1,0 +1,7 @@
+-- SCRIPT B
+BEGIN;
+
+-- SQL SCRIPT
+
+COMMIT;
+-- SCRIPT B
