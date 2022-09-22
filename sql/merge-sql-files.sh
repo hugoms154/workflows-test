@@ -6,3 +6,5 @@ then
   echo ---------SCRIPT FROM $f------------; cat $f; echo; echo; 
 fi
 done > teste.sql
+
+echo $(cat teste.sql)
