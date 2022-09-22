@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Create report file
-        run: cd sql && rm teste.sql || true && for f in *.sql; do cat $f; echo; echo; done > teste.sql
+        run: cd sql && ./merge-sql-files.sh
       - name: Commit report
         run: |
           git config --global user.name 'hugo miranda'
