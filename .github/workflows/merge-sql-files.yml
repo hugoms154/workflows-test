@@ -18,5 +18,6 @@ jobs:
         run: |
           git config --global user.name 'hugo miranda'
           git config --global user.email 'hugo.miranda.souza@gmail.com'
+          git add .
           git commit -am "merge-sql-files-action"
           git push
