@@ -1,4 +1,6 @@
 #!/bin/bash
+cd $1
+
 rm teste.sql || true
 for f in *.sql; do 
 if [ $f != teste.sql ] 

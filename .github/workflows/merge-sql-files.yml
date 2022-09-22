@@ -5,9 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Merge SQL Files
-        run: cd sql && ./merge-sql-files.sh
-      - name: Commit report
+      - name: Merge SQL Files From sql
+        run: ./merge-sql-files.sh sql
+
+      - name: Merge SQL Files From sql1
+        run: ./merge-sql-files.sh sql1
+
+      - name: Merge SQL Files From sql2
+        run: ./merge-sql-files.sh sql2
+
+      - name: Commit files
         run: |
           git config --global user.name 'hugo miranda'
           git config --global user.email 'hugo.miranda.souza@gmail.com'
